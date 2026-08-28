@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>StudyShield AI — Your Personal AI Academic Guardian</title>
+<meta name="description" content="StudyShield AI analyzes academic performance, predicts weak topics and builds a personalized recovery plan. Predict. Protect. Perform." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- ============ TOASTS ============ -->
+<div id="toastWrap" class="toast-wrap"></div>
+
+<!-- ============ LANDING ============ -->
+<div id="landing" class="landing">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="grid-bg"></div>
+
+  <header class="nav glass">
+    <div class="brand"><span class="logo">🛡️</span><b>StudyShield<span class="grad"> AI</span></b></div>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#preview">Dashboard</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggleLanding" title="Toggle theme">🌙</button>
+      <button class="btn btn-ghost" onclick="openLogin()">Login</button>
+      <button class="btn btn-primary" onclick="demoLogin()">Start AI Analysis</button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="pill"><span class="dot-live"></span> AI Academic Risk Engine — <b>ACTIVE</b></div>
+      <h1>Know What to Study.<br><span class="grad">Before It's Too Late.</span></h1>
+      <p class="lead">StudyShield AI analyzes your academic performance, predicts weak topics, and creates a personalized recovery plan.</p>
+      <div class="hero-btns">
+        <button class="btn btn-primary btn-lg" onclick="openLogin()">🚀 Start AI Analysis</button>
+        <button class="btn btn-outline btn-lg" onclick="demoLogin()">▶ View Demo</button>
+      </div>
+      <div class="hero-stats">
+        <div><b class="count" data-count="42">0</b><span>Topics mapped</span></div>
+        <div><b class="count" data-count="5">0</b><span>Subjects tracked</span></div>
+        <div><b class="count" data-count="94">0</b><span>% prediction confidence</span></div>
+      </div>
+    </div>
+
+    <div class="hero-preview glass" id="preview">
+      <div class="scanline"></div>
+      <div class="hp-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><small>studyshield.ai / dashboard</small></div>
+      <div class="hp-body">
+        <div class="hp-risk">
+          <div class="ring" style="--p:72"><span>72</span></div>
+          <div><b>Academic Risk</b><small>Moderate Risk · live</small></div>
+        </div>
+        <div class="hp-bars">
+          <div class="bl"><span>Computer Networks</span><i class="bar"><b style="width:42%"></b></i></div>
+          <div class="bl"><span>DBMS</span><i class="bar"><b style="width:55%"></b></i></div>
+          <div class="bl"><span>Operating Systems</span><i class="bar"><b style="width:61%"></b></i></div>
+          <div class="bl"><span>Cloud Computing</span><i class="bar"><b style="width:78%"></b></i></div>
+        </div>
+        <div class="hp-alert">🎯 Study <b>TCP/IP</b> now — 30 minutes</div>
+      </div>
+    </div>
+  </section>
+<section class="features" id="features">
+    <h2>An AI guardian for every exam cycle</h2>
+    <div class="feat-grid">
+      <div class="feat glass"><span>🧠</span><h3>Shield Intelligence</h3><p>Critical, warning and positive insights generated from your live performance signals.</p></div>
+      <div class="feat glass"><span>📚</span><h3>Syllabus Analyzer</h3><p>Upload a syllabus and watch topics get mapped and weak areas detected automatically.</p></div>
+      <div class="feat glass"><span>🎯</span><h3>What to Study Now</h3><p>One clear next action, ranked by accuracy, exam weight and recency.</p></div>
+      <div class="feat glass"><span>📝</span><h3>AI Micro Quiz</h3><p>Adaptive 5-question drills on your weakest topics with instant explanations.</p></div>
+      <div class="feat glass"><span>🔮</span><h3>Recovery Simulator</h3><p>See how daily study minutes change your predicted exam readiness.</p></div>
+      <div class="feat glass"><span>🏆</span><h3>Achievements</h3><p>Streaks and badges that unlock as you actually do the work.</p></div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step glass"><b>01</b><h4>Connect performance</h4><p>Quiz scores, attendance and syllabus data feed the engine.</p></div>
+      <div class="step glass"><b>02</b><h4>Predict risk</h4><p>The model scores each topic and computes your academic risk.</p></div>
+      <div class="step glass"><b>03</b><h4>Recover</h4><p>A daily plan, quizzes and simulations close the gap before the exam.</p></div>
+    </div>
+    <button class="btn btn-primary btn-lg" onclick="demoLogin()">Enter the Dashboard →</button>
+  </section>
+
+  <footer class="foot">
+    <div class="brand"><span class="logo">🛡️</span><b>StudyShield AI</b> — <i>Predict. Protect. Perform.</i></div>
+    <small>StudyShield AI © 2026 | AI-powered academic success platform</small>
+  </footer>
+</div>
+<!-- ============ LOGIN MODAL ============ -->
+<div class="modal-back" id="loginModal">
+  <div class="modal glass">
+    <button class="modal-x" onclick="closeModal('loginModal')">✕</button>
+    <div class="modal-brand"><span class="logo">🛡️</span><b>StudyShield<span class="grad"> AI</span></b></div>
+    <h3>Welcome back</h3>
+    <p class="muted">Sign in to your academic guardian.</p>
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <label>Email<input type="email" id="loginEmail" placeholder="jerone@college.edu" required></label>
+      <label>Password<input type="password" id="loginPass" placeholder="••••••••" required></label>
+      <button class="btn btn-primary w-full" type="submit">Login</button>
+    </form>
+    <div class="or"><span>or</span></div>
+    <button class="btn btn-outline w-full" onclick="demoLogin()">👤 Demo Student</button>
+    <small class="muted center">Frontend-only prototype · no real authentication</small>
+  </div>
+</div>
+<!-- ============ RISK MODAL ============ -->
+<div class="modal-back" id="riskModal">
+  <div class="modal glass wide">
+    <button class="modal-x" onclick="closeModal('riskModal')">✕</button>
+    <h3>Why am I at risk?</h3>
+    <p class="muted">Weighted factors behind your score of <b id="riskModalScore">72</b>/100.</p>
+    <div id="riskFactors" class="factors"></div>
+    <div class="note">AI-generated demo estimate</div>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app" class="app hidden">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand side-brand"><span class="logo">🛡️</span><b>StudyShield<span class="grad"> AI</span></b></div>
+    <nav class="side-nav">
+      <button class="s-link active" data-view="dashboard">🏠 <span>Dashboard</span></button>
+      <button class="s-link" data-view="intel">🧠 <span>Shield Intelligence</span></button>
+      <button class="s-link" data-view="syllabus">📚 <span>Syllabus</span></button>
+      <button class="s-link" data-view="plan">🎯 <span>Study Plan</span></button>
+      <button class="s-link" data-view="quiz">📝 <span>AI Quiz</span></button>
+      <button class="s-link" data-view="analytics">📊 <span>Analytics</span></button>
+      <button class="s-link" data-view="alerts">🔔 <span>Alerts</span></button>
+      <button class="s-link" data-view="achievements">🏆 <span>Achievements</span></button>
+      <button class="s-link" data-view="profile">👤 <span>Profile</span></button>
+    </nav>
+    <div class="side-foot">
+      <div class="tagline">Predict. Protect. Perform.</div>
+      <button class="btn btn-ghost w-full" onclick="logout()">↩ Logout</button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" onclick="toggleSidebar(false)"></div>
+
+  <main class="main">
+    <header class="topbar glass">
+      <button class="icon-btn only-mobile" onclick="toggleSidebar(true)">☰</button>
+      <div class="tb-title" id="viewTitle">Dashboard</div>
+      <div class="tb-actions">
+        <button class="icon-btn" id="themeToggle" title="Toggle theme">🌙</button>
+        <button class="icon-btn bell" onclick="go('alerts')">🔔<i class="badge" id="bellBadge">3</i></button>
+        <div class="avatar" onclick="go('profile')">JA</div>
+      </div>
+    </header>
+
+    <div class="views">
+      <!-- DASHBOARD -->
+      <section class="view active" id="view-dashboard">
+        <div class="greet">
+          <h1 id="greeting">Good Morning, Jerone 👋</h1>
+          <p class="muted">Here's your academic shield status for today.</p>
+        </div>
+         <div class="stat-grid">
+          <div class="stat glass"><small>Academic Risk</small><b><span class="count" data-count="72">0</span>/100</b><span class="tag warn">Moderate Risk</span><i class="bar"><b style="width:72%"></b></i></div>
+          <div class="stat glass"><small>Attendance</small><b><span class="count" data-count="86">0</span>%</b><span class="tag good">Healthy</span><i class="bar"><b style="width:86%"></b></i></div>
+          <div class="stat glass"><small>Quiz Accuracy</small><b><span class="count" id="accStat" data-count="78">0</span>%</b><span class="tag good">Improving</span><i class="bar" id="accBar"><b style="width:78%"></b></i></div>
+          <div class="stat glass"><small>Study Streak</small><b><span class="count" id="streakStat" data-count="7">0</span> Days 🔥</b><span class="tag good">On fire</span><i class="bar"><b style="width:70%"></b></i></div>
+          <div class="stat glass"><small>Exam Countdown</small><b><span class="count" data-count="12">0</span> Days</b><span class="tag crit">Crunch time</span><i class="bar"><b style="width:40%"></b></i></div>
+        </div>
+ <div class="focus glass">
+          <div class="focus-scan"></div>
+          <div class="focus-left">
+            <div class="pill"><span class="dot-live"></span> AI Priority Engine</div>
+            <h2>🎯 WHAT SHOULD I STUDY RIGHT NOW?</h2>
+            <div class="focus-topic"><b>TCP/IP</b><span>30 Minutes</span></div>
+            <ul class="reasons">
+              <li>🔴 Quiz accuracy: <b>42%</b></li>
+              <li>⭐ Exam importance: <b>High</b></li>
+              <li>🕓 Not studied recently</li>
+              <li>📅 Exam in <b>8 days</b></li>
+            </ul>
+            <button class="btn btn-primary btn-lg" id="focusBtn" onclick="startFocus()">▶ Start Focus Session</button>
+          </div>
+          <div class="focus-right">
+            <div class="ring big" id="focusRing" style="--p:0"><span id="focusTime">30:00</span></div>
+            <small class="muted" id="focusHint">Timer idle · 30 minute deep-work block</small>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="card glass">
+            <h3>Today's plan progress</h3>
+            <div class="prog-line"><i class="bar lg"><b id="dashPlanBar" style="width:0%"></b></i><span id="dashPlanPct">0%</span></div>
+            <p class="muted" id="dashPlanText">0 of 4 tasks completed</p>
+            <button class="btn btn-outline" onclick="go('plan')">Open Study Plan →</button>
+          </div>
+          <div class="card glass">
+            <h3>Top weak topics</h3>
+            <div id="dashWeak" class="weak-list"></div>
+            <button class="btn btn-outline" onclick="go('syllabus')">Open Analyzer →</button>
+          </div>
+        </div>
+      </section>
+      <!-- INTELLIGENCE -->
+      <section class="view" id="view-intel">
+        <h1>🧠 Shield Intelligence</h1>
+        <p class="muted">Live insights generated from your performance signals.</p>
+        <div class="insight-grid" id="insightGrid"></div>
+        <div class="card glass risk-cta">
+          <div><h3>Academic Risk Score</h3><p class="muted">Composite of accuracy, attendance, recency and exam weight.</p></div>
+          <div class="rc-right"><div class="ring" style="--p:72"><span>72</span></div><button class="btn btn-primary" onclick="openRisk()">Why am I at risk?</button></div>
+        </div>
+
+        <div class="card glass">
+          <h3>AI Academic Risk Prediction</h3>
+          <p class="muted">Current Readiness: <b id="readinessLabel">68%</b></p>
+          <div class="predict">
+            <div class="ring big" id="readyRing" style="--p:68"><span id="readyVal">68%</span></div>
+            <div class="predict-bars">
+              <div class="bl"><span>Current Performance</span><i class="bar"><b style="width:68%"></b></i><em>68%</em></div>
+              <div class="bl"><span>Target Performance</span><i class="bar"><b class="alt" style="width:85%"></b></i><em>85%</em></div>
+              <div class="bl"><span>Predicted (with plan)</span><i class="bar"><b class="alt2" id="predBar" style="width:74%"></b></i><em id="predVal">74%</em></div>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="analyzeFuture()">Analyze My Future Risk</button>
+          <div id="futureOut" class="future-out hidden"></div>
+        </div>
+
+        <div class="card glass">
+          <h3>🔮 Academic Recovery Simulator</h3>
+          <p class="muted">Choose your daily study commitment and see predicted exam readiness.</p>
+          <div class="sim-opts">
+            <button class="sim" data-min="30">30 min</button>
+            <button class="sim" data-min="60">60 min</button>
+            <button class="sim" data-min="90">90 min</button>
+            <button class="sim" data-min="120">120 min</button>
+          </div>
+          <div class="sim-chart" id="simChart"></div>
+          <div class="sim-result" id="simResult">Select a study time to simulate your recovery.</div>
+          <div class="note">AI-generated demo estimate</div>
+        </div>
+      </section>
+
+      <!-- SYLLABUS -->
+      <section class="view" id="view-syllabus">
+        <h1>📚 Syllabus Analyzer</h1>
+        <p class="muted">Upload your syllabus — the engine maps topics and detects weak areas.</p>
+        <div class="card glass upload" id="dropZone">
+          <div class="up-icon">📄</div>
+          <h3 id="fileName">Drop your syllabus here</h3>
+          <p class="muted">PDF, DOCX or TXT · processed locally in your browser</p>
+          <input type="file" id="fileInput" hidden />
+          <div class="up-btns">
+            <button class="btn btn-outline" onclick="document.getElementById('fileInput').click()">Select File</button>
+            <button class="btn btn-primary" onclick="runAnalysis()">⚡ Analyze Syllabus</button>
+          </div>
+        </div>
+        <div class="card glass" id="pipeline">
+          <h3>Analysis pipeline</h3>
+          <div class="steps-line" id="stepsLine"></div>
+          <i class="bar lg"><b id="pipeBar" style="width:0%"></b></i>
+        </div>
+
+        <div class="card glass">
+          <h3>Topic map</h3>
+          <div class="table-wrap">
+            <table class="tbl">
+              <thead><tr><th>Subject</th><th>Topic</th><th>Performance</th><th>Risk</th></tr></thead>
+              <tbody id="topicTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+       <!-- PLAN -->
+      <section class="view" id="view-plan">
+        <h1>🎯 Today's AI Study Plan</h1>
+        <p class="muted">Ordered by risk impact. Check items off as you finish them.</p>
+        <div class="card glass">
+          <div class="prog-line"><i class="bar lg"><b id="planBar" style="width:0%"></b></i><span id="planPct">0%</span></div>
+          <p class="muted" id="planCount">0 of 4 tasks completed</p>
+        </div>
+        <div class="task-list" id="taskList"></div>
+        <button class="btn btn-outline" onclick="resetPlan()">Reset today's plan</button>
+      </section>
+
+      <!-- QUIZ -->
+      <section class="view" id="view-quiz">
+        <h1>📝 AI Micro Quiz</h1>
+        <p class="muted">5 adaptive questions targeting your weakest topics.</p>
+        <div class="card glass quiz" id="quizCard"></div>
+      </section>
+
+      <!-- ANALYTICS -->
+      <section class="view" id="view-analytics">
+        <h1>📊 Analytics</h1>
+        <p class="muted">Everything the engine tracks, visualized.</p>
+        <div class="two-col">
+          <div class="card glass"><h3>Weekly study hours</h3><div class="colchart" id="hoursChart"></div></div>
+          <div class="card glass"><h3>Quiz accuracy trend</h3><div class="linechart" id="accChart"></div></div>
+        </div>
+        <div class="two-col">
+          <div class="card glass"><h3>Subject performance</h3><div id="subjChart" class="hbars"></div></div>
+          <div class="card glass"><h3>Topic mastery</h3><div id="masteryChart" class="hbars"></div></div>
+        </div>
+        <div class="two-col">
+          <div class="card glass"><h3>Academic risk trend</h3><div class="colchart" id="riskChart"></div></div>
+          <div class="card glass"><h3>Study streak</h3><div class="streak" id="streakGrid"></div><p class="muted">Last 28 days of activity</p></div>
+        </div>
+      </section>
+
+      <!-- ALERTS -->
+      <section class="view" id="view-alerts">
+        <h1>🔔 Alerts</h1>
+        <p class="muted">Notifications from your academic guardian.</p>
+        <div class="alert-list" id="alertList"></div>
+        <button class="btn btn-outline" onclick="markAllRead()">Mark all as read</button>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section class="view" id="view-achievements">
+        <h1>🏆 Achievements</h1>
+        <p class="muted">Unlocked by real actions inside StudyShield.</p>
+        <div class="ach-grid" id="achGrid"></div>
+      </section>
+
+      <!-- PROFILE -->
+      <section class="view" id="view-profile">
+        <h1>👤 Profile</h1>
+        <div class="two-col">
+          <div class="card glass profile-card">
+            <div class="avatar xl" id="profAvatar">JA</div>
+            <h2 id="profName">Jerone Akash</h2>
+            <p class="muted" id="profSub">Computer Science · Semester 5</p>
+            <div class="prof-stats">
+              <div><b id="pOverall">72%</b><small>Overall Score</small></div>
+              <div><b id="pAtt">86%</b><small>Attendance</small></div>
+              <div><b id="pStreak">7</b><small>Day Streak</small></div>
+            </div>
+          </div>
+          <div class="card glass">
+            <h3>Edit profile</h3>
+            <label>Name<input id="inName"></label>
+            <label>Course<input id="inCourse"></label>
+            <label>Semester<input id="inSem" type="number" min="1" max="8"></label>
+            <label>Attendance %<input id="inAtt" type="number" min="0" max="100"></label>
+            <button class="btn btn-primary" onclick="saveProfile()">Save changes</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="app-foot">StudyShield AI © 2026 | AI-powered academic success platform</footer>
+  </main>
+   <!-- SHIELDBOT -->
+  <button class="bot-fab" id="botFab" onclick="toggleBot()">🤖 <span>ShieldBot</span></button>
+  <div class="bot glass hidden" id="botWin">
+    <div class="bot-head"><b>🤖 ShieldBot</b><span class="muted">AI study assistant</span><button class="modal-x" onclick="toggleBot()">✕</button></div>
+    <div class="bot-body" id="botBody"></div>
+    <div class="bot-chips">
+      <button onclick="botAsk('What should I study?')">What should I study?</button>
+      <button onclick="botAsk('Why am I at risk?')">Why am I at risk?</button>
+      <button onclick="botAsk('Explain TCP/IP')">Explain TCP/IP</button>
+      <button onclick="botAsk('Create a revision plan')">Revision plan</button>
+    </div>
+    <form class="bot-form" onsubmit="return botSubmit(event)">
+      <input id="botInput" placeholder="Ask ShieldBot anything…" autocomplete="off">
+      <button class="btn btn-primary" type="submit">➤</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
